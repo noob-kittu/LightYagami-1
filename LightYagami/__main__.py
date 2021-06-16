@@ -49,39 +49,36 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Start_text = "<b>________✞Let's Kill Bad Peoples✞_______\n✞By Writing Those Name On Death Note✞"
+Start_text = "<b>________The only thing Humans are equal in is Death.__________/n Time to Start now.."
 
 Bold_String = Start_text
 
 
 PM_START_TEXT = """
-Hey You {},You Are In Light's Pm
-
-Nice To Meet You Dude....
-
-I am an Anime themed group management bot.
-I am Made To Provide Justice To Your Group.
-Here You Can See My Power By Writing /help.
+Heya! How's it going {}?
+Pleasure meeting you!
+I am a group management bot and managing Anime-based communities is my Forte.
+Add me to your group to make management easier.
+Type the command /help to see what I can do.
 """
 
 HELP_STRINGS = """
-[Light](https://telegra.ph/file/707a516dfc688ebb8c423.mp4) Is Here:
-Here You Can See My Power With These Power 
-I Will Manage Your Group
-And Provide Justice To Your Group
-✪ /start: Starts me! You've probably already used this.
-✪ /help: Click this, I'll let you know about myself!
-✪ /settings: 
-   ◔ in PM: will send you your settings for all supported modules.
-   ◔ in a Group: will redirect you to pm, with all that chat's settings.
+I am here to Help you.
+I can show you what am capable of here. 
+I can help make managament easier.
+/start: Starts me.You've prob'ly used it already.
+/help : Tap to know more about me!
+/settings: 
+   typing this command in pm will send you your settings for all supported modules.
+   typing this command in a Group: will redirect you to pm, with all that chat's settings.
 """.format(
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/4911c03742b50ad0d8bf7.jpg"
-LIGHT_IMG = "https://telegra.ph/file/5580465a8e3c4d51d5c3c.mp4"
+SAITAMA_IMG = "https://telegra.ph/file/0b0ef932ff618238b565f.jpg"
+LIGHT_IMG = "https://telegra.ph/file/193ac0050a3e1d7e02836.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
+DONATE_STRING = """OwO! Glad to hear you want to donate!
 """
 
 IMPORTED = {}
@@ -199,28 +196,28 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="⚖️Add Kira to your group⚖️",
+                            text="☣Add Johan to your group",
                             url="t.me/{}?startgroup=true".format(context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
-                             text="📢 Support Group",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
+                             text="☯Support Group",
+                             url="https://t.me/liebert_support"),
                          InlineKeyboardButton(
-                             text="🔔 Updates Of Light 🔔",
-                             url="https://t.me/seedofbots")
+                             text="☮Johan Stats
+                             url="https://t.me/joinchat/sRmqlmxSR6hmYzU1")
                      ],
                     
+                    
+                         
+                           
+                     
+                        
+                             
+                  
                     [
-                         InlineKeyboardButton(
-                             text="❤My God❤",
-                             url="https://t.me/death_note_light_yagami"),
-                         InlineKeyboardButton(
-                             text="⌨Repo🖱",
-                             url="https://github.com/YashMorya/LightYagami")
-                     ],[
                         InlineKeyboardButton(
-                            text="❗❔Help And Commands❔",
+                            text="❅Help And Commands",
                             url="t.me/{}?start=help".format(context.bot.username))
                     ]]))
     else:
