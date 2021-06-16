@@ -67,12 +67,12 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         return ""
 
     if user_id in DEMONS:
-        rt += "Requested HA to promote a Demon Disaster to Dragon."
+        rt += "Requested HA to promote a Demon Disaster to Conjurer."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HA to promote a Wolf Disaster to Dragon."
+        rt += "Requested HA to promote a Wolf Disaster to Conjurer."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -83,7 +83,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Dragon!".format(
+        rt + "\nSuccessfully set Disaster level of {} to CoConjurer!".format(
             user_member.first_name))
 
     log_message = (
@@ -122,7 +122,7 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "Requested HA to demote this Dragon to Demon"
+        rt += "Requested HA to demote this Conjurer to Demon"
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
@@ -177,7 +177,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Wolf."
+        rt += "This member is a Conjurer, Demoting to Wolf."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
@@ -233,7 +233,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Tiger."
+        rt += "This member is a Conjurer, Demoting to Tiger."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
@@ -314,7 +314,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Dragon Disaster!")
+        message.reply_text("This user is not a Conjurer!")
         return ""
 
 
@@ -496,7 +496,7 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known Dragon Disasters 🐉:</b>\n"
+    reply = "<b>Known Conjurer:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -528,12 +528,12 @@ __help__ = f"""
 Commands listed here only work for users with special access are mainly used for troubleshooting, debugging purposes.
 Group admins/group owners do not need these commands. 
  ╔ *List all special users:*
- ╠ `/dragons`*:* Lists all Dragon disasters
+ ╠ `/conjurers`*:* Lists all Conjurers
  ╠ `/demons`*:* Lists all Demon disasters
  ╠ `/tigers`*:* Lists all Tigers disasters
  ╠ `/wolves`*:* Lists all Wolf disasters
  ╠ `/Shinigamis`*:* Lists all Shinigamis(Dev Users)
- ╠ `/adddragon`*:* Adds a user to Dragon
+ ╠ `/addconjurer`*:* Adds a user to Conjurer
  ╠ `/adddemon`*:* Adds a user to Demon
  ╠ `/addtiger`*:* Adds a user to Tiger
  ╠ `/addwolf`*:* Adds a user to Wolf
@@ -601,11 +601,11 @@ Group admins/group owners do not need these commands.
 Visit @{SUPPORT_CHAT} for more information.
 """
 
-SUDO_HANDLER = CommandHandler(("addsudo", "adddragon"), addsudo)
+SUDO_HANDLER = CommandHandler(("addsudo", "addconjurer"), addsudo)
 SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport)
 TIGER_HANDLER = CommandHandler(("addtiger"), addtiger)
 WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addwolf"), addwhitelist)
-UNSUDO_HANDLER = CommandHandler(("removesudo", "removedragon"), removesudo)
+UNSUDO_HANDLER = CommandHandler(("removesudo", "removeconjurer"), removesudo)
 UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removedemon"),
                                    removesupport)
 UNTIGER_HANDLER = CommandHandler(("removetiger"), removetiger)
@@ -616,7 +616,7 @@ WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"],
                                        whitelistlist)
 TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
 SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "conjurer"], sudolist)
 DEVLIST_HANDLER = CommandHandler(["devlist", "shinigamis"], devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)
