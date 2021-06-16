@@ -222,7 +222,7 @@ def start(update: Update, context: CallbackContext):
                     ]]))
     else:
         update.effective_message.reply_video(
-                LIGHT_IMG, caption= "<b>____✞Providing Justice To The Peoples✞___\n_______✞Haven't Rest Since:</b><code>{}</code><b>✞_______</b>".format(
+                LIGHT_IMG, caption= "<b>____Gotta keep up the hustle..___\n_______Been awake since:</b><code>{}</code><b>✞_______</b>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -496,7 +496,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID !=  622348122 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
