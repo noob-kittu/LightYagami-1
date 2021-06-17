@@ -448,7 +448,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 @run_async
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Wolf Disasters 🐺:</b>\n"
+    reply = "<b>Transmuter:</b>\n"
     bot = context.bot
     for each_user in WOLVES:
         user_id = int(each_user)
@@ -464,7 +464,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Tiger Disasters 🐯:</b>\n"
+    reply = "<b>Enhancer:</b>\n"
     bot = context.bot
     for each_user in TIGERS:
         user_id = int(each_user)
@@ -480,7 +480,7 @@ def tigerlist(update: Update, context: CallbackContext):
 @whitelist_plus
 def supportlist(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known Demon Disasters 👹:</b>\n"
+    reply = "<b>Manipulator:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
@@ -512,7 +512,7 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>👹Shinigamis💀:</b>\n"
+    reply = "<b>Progenitor:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -529,14 +529,14 @@ Commands listed here only work for users with special access are mainly used for
 Group admins/group owners do not need these commands. 
  ╔ *List all special users:*
  ╠ `/conjurers`*:* Lists all Conjurers
- ╠ `/demons`*:* Lists all Demon disasters
- ╠ `/tigers`*:* Lists all Tigers disasters
- ╠ `/wolves`*:* Lists all Wolf disasters
- ╠ `/Shinigamis`*:* Lists all Shinigamis(Dev Users)
+ ╠ `/manipulators`*:* Lists all Manipulators
+ ╠ `/enhancer`*:* Lists all Enhancers
+ ╠ `/transmuters`*:* Lists all Transmuters
+ ╠ `/progenitors`*:* Lists all Progenitors(Dev Users)
  ╠ `/addconjurer`*:* Adds a user to Conjurer
- ╠ `/adddemon`*:* Adds a user to Demon
- ╠ `/addtiger`*:* Adds a user to Tiger
- ╠ `/addwolf`*:* Adds a user to Wolf
+ ╠ `/addmanipulator`*:* Adds a user to Manipulators
+ ╠ `/addenhancer`*:* Adds a user to Enhancers
+ ╠ `/addtransmuter`*:* Adds a user to Transmuters
  ╚ `Add dev doesnt exist, devs should know how to add themselves`
  ╔ *Ping:*
  ╠ `/ping`*:* gets ping time of bot to telegram server
@@ -602,22 +602,22 @@ Visit @{SUPPORT_CHAT} for more information.
 """
 
 SUDO_HANDLER = CommandHandler(("addsudo", "addconjurer"), addsudo)
-SUPPORT_HANDLER = CommandHandler(("addsupport", "adddemon"), addsupport)
-TIGER_HANDLER = CommandHandler(("addtiger"), addtiger)
-WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addwolf"), addwhitelist)
+SUPPORT_HANDLER = CommandHandler(("addsupport", "addmanipulator"), addsupport)
+TIGER_HANDLER = CommandHandler(("addenhancer"), addtiger)
+WHITELIST_HANDLER = CommandHandler(("addwhitelist", "addtransmuter"), addwhitelist)
 UNSUDO_HANDLER = CommandHandler(("removesudo", "removeconjurer"), removesudo)
-UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removedemon"),
+UNSUPPORT_HANDLER = CommandHandler(("removesupport", "removemanipulator"),
                                    removesupport)
-UNTIGER_HANDLER = CommandHandler(("removetiger"), removetiger)
-UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removewolf"),
+UNTIGER_HANDLER = CommandHandler(("removeenhancer"), removetiger)
+UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removetransmuter"),
                                      removewhitelist)
 
-WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"],
+WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "transmuters"],
                                        whitelistlist)
-TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
-SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "conjurer"], sudolist)
-DEVLIST_HANDLER = CommandHandler(["devlist", "shinigamis"], devlist)
+TIGERLIST_HANDLER = CommandHandler(["enhancers"], tigerlist)
+SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "manipulators"], supportlist)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "conjurers"], sudolist)
+DEVLIST_HANDLER = CommandHandler(["devlist", "progenitors"], devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
