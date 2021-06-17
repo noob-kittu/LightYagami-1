@@ -49,7 +49,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Start_text = "<b>________The only thing Humans are equal in is Death.__________/n Time to Start now.."
+Start_text = "<b>The only thing Humans are equal in is Death./n Time to Start now.."
 
 Bold_String = Start_text
 
@@ -540,7 +540,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Time To Write Names On Death Note")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Time to Roll.")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
