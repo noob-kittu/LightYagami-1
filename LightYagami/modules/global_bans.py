@@ -71,31 +71,31 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "Sorry But I Can't Write Shinigamis Names On Death Note"
+            "Sorry But I Can't ban one of the Progenitors."
         )
         return
 
     if int(user_id) in DRAGONS:
         message.reply_text(
-            "I spy, with my little eye... a disaster! Why are you guys turning on each other?"
+            "I spy, with my little eye... a Conjurer! Why are you guys turning on each other?"
         )
         return
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "OOOH someone's trying to gban a Demon Disaster! *grabs popcorn*")
+            "OOOH someone's trying to gban a Manipulator! *interesting*")
         return
 
     if int(user_id) in TIGERS:
-        message.reply_text("That's a Tiger! They cannot be banned!")
+        message.reply_text("That's a Enhancer! They cannot be banned.")
         return
 
     if int(user_id) in WOLVES:
-        message.reply_text("That's a Wolf! They cannot be banned!")
+        message.reply_text("That's a Transmuter. They can't be banned!")
         return
 
     if user_id == bot.id:
-        message.reply_text("Don't Mess With Me It's Not Good For You To Scold Kira")
+        message.reply_text("Don't Mess With Me It's Not Good For You To Scold Creator")
         return
 
     if user_id in [777000, 1087968824, 1270288285]:
@@ -453,7 +453,7 @@ def gbanstat(update: Update, context: CallbackContext):
                 "I am now protecting your group from potential remote threats!")
         elif args[0].lower() in ["off", "no"]:
             sql.disable_gbans(update.effective_chat.id)
-            update.effective_message.reply_text("Antispan is now disabled ❌ "
+            update.effective_message.reply_text("Antispamis now disabled ❌ "
                                                 "Spamwatch is now disabled ❌")
     else:
         update.effective_message.reply_text(
