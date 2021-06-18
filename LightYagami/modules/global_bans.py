@@ -20,7 +20,7 @@ from LightYagami.modules.helper_funcs.chat_status import (is_user_admin,
 from LightYagami.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
 from LightYagami.modules.helper_funcs.misc import send_to_list
-Light_Pic = "https://telegra.ph/file/2e82dc07d1a0d2b0f1c11.mp4"
+Light_Pic = "https://telegra.ph/file/ec0a2d72ba2c884bbf5ee.jpg"
 GBAN_ENFORCE_GROUP = 6
 
 GBAN_ERRORS = {
