@@ -15,10 +15,6 @@ from LightYagami.modules.helper_funcs.extraction import extract_user_and_text
 from LightYagami.modules.helper_funcs.string_handling import extract_time
 from LightYagami.modules.log_channel import gloggable, loggable
 
-
-Light_Pic = "https://telegra.ph/file/2e82dc07d1a0d2b0f1c11.mp4"
-Light_pic2 = "https://telegra.ph/file/b913ece1017624b2fe3ef.mp4"
-
 @run_async
 @connection_status
 @bot_admin
@@ -49,35 +45,33 @@ def ban(update: Update, context: CallbackContext) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_video(Light_pic2)
-        message.reply_text("Don't Take Me As Noob Like You I Am The Only One Who Kill L")
+        message.reply_text("Why you want to ban me Master??")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
-            message.reply_video(Light_pic2)
             message.reply_text(
-                "HE IS THE GOD THE REAL KIRA")
+                "Don't ask me to ban the creator.")
             return log_message
         elif user_id in DEV_USERS:
-            message.reply_text("Dude You Can't Even See Ryuk")
+            message.reply_text("How can I ban the Progenitor himself.")
             return log_message
         elif user_id in DRAGONS:
             message.reply_text(
-                "Only Kira Can Kill L And Obviously You Are Not Kira")
+                "I can't do nothing to this conjurer.")
             return log_message
         elif user_id in DEMONS:
             message.reply_text(
-                "Don't Dare To Touch Misa Dude"
+                "Don't you mess with the Manipulators"
             )
             return log_message
         elif user_id in TIGERS:
             message.reply_text(
-                "Sorry But You Can't Reach To Near."
+                "Sorry But You Can't do nothing to this Enhancer."
             )
             return log_message
         elif user_id in WOLVES:
-            message.reply_text("Sorry But Mello Has The Ability Of That I can't Ban Him")
+            message.reply_text("Sorry but this Transmuter is immune to your bans")
             return log_message
         else:
             message.reply_text("This user has immunity and cannot be banned.")
@@ -94,7 +88,6 @@ def ban(update: Update, context: CallbackContext) -> str:
 
     try:
         chat.kick_member(user_id)
-        bot.send_video(chat.id, Light_Pic)
         reply = (
             f"<code>❕</code><b>Ban Event</b>\n"
             f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
@@ -106,7 +99,6 @@ def ban(update: Update, context: CallbackContext) -> str:
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
-            message.reply_video(Light_Pic)
             # Do not reply
             message.reply_text('Banned!', quote=False)
             return log
@@ -244,10 +236,9 @@ def kill(update: Update, context: CallbackContext) -> str:
 
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        bot.send_video(chat.id, Light_Pic)  
         bot.sendMessage(
             chat.id,
-            f"Wrote {mention_html(member.user.id, html.escape(member.user.first_name))}'s Name On My Death Note!",
+            f"{mention_html(member.user.id, html.escape(member.user.first_name))}'s is proving to be troublesome I think!",
             parse_mode=ParseMode.HTML)
         log = (
             f"<b>{html.escape(chat.title)}:</b>\n"
@@ -261,7 +252,7 @@ def kill(update: Update, context: CallbackContext) -> str:
         return log
 
     else:
-        message.reply_text("Well damn, I can't kill that user with my death note.")
+        message.reply_text("Well damn, I can't do nothing to that person.")
 
     return log_message
 
@@ -282,9 +273,9 @@ def killme(update: Update, context: CallbackContext):
         user_id)  # unban on current user = kick
     if res:
         update.effective_message.reply_video(Light_Pic)
-        update.effective_message.reply_text("*Wrote Your Name On The Death Note*")
+        update.effective_message.reply_text("*Guess you'll have to leave..*")
     else:
-        update.effective_message.reply_text("Huh? My Pen Is Lost")
+        update.effective_message.reply_text("Huh? You're staying??")
 
 
 @run_async
