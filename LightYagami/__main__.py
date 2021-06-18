@@ -76,7 +76,7 @@ I can help make managament easier.
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 SAITAMA_IMG = "https://telegra.ph/file/0b0ef932ff618238b565f.jpg"
-LIGHT_IMG = "https://telegra.ph/file/193ac0050a3e1d7e02836.jpg"
+
 
 DONATE_STRING = """OwO! Glad to hear you want to donate!
 """
@@ -221,8 +221,8 @@ def start(update: Update, context: CallbackContext):
                             url="t.me/{}?start=help".format(context.bot.username))
                     ]]))
     else:
-        update.effective_message.reply_video(
-                LIGHT_IMG, caption= "<b>____Gotta keep up the hustle.\n Been awake since:</b><code>{}</code><b>_______</b>".format(
+        update.effective_message.(
+               , caption= "<b>Watch as the world turned and I did come back.\n Been awake since:</b><code>{}</code><b></b>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
