@@ -276,9 +276,9 @@ def bot_can_delete(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_delete = "I can't delete messages here!\nMake sure I'm admin and can delete other user's messages."
+            cant_delete = "You want me to delete this./n Fine! Make me admin then."
         else:
-            cant_delete = f"I can't delete messages in <b>{update_chat_title}</b>!\nMake sure I'm admin and can delete other user's messages there."
+            cant_delete = f"I can't delete this stuff. <b>{update_chat_title}</b>!\n Make me an admin first Aho."
 
         if can_delete(chat, bot.id):
             return func(update, context, *args, **kwargs)
@@ -326,8 +326,8 @@ def can_promote(func):
             cant_promote = "I can't promote/demote people here!\nMake sure I'm admin and can appoint new admins."
         else:
             cant_promote = (
-                f"I can't promote/demote people in <b>{update_chat_title}</b>!\n"
-                f"Make sure I'm admin there and can appoint new admins.")
+                f"I can't promote/demote anyone.<b>{update_chat_title}</b>!\n"
+                f"Until you make me admin that is.")
 
         if chat.get_member(bot.id).can_promote_members:
             return func(update, context, *args, **kwargs)
