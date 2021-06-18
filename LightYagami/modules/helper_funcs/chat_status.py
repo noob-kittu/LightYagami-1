@@ -111,7 +111,7 @@ def dev_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "This is a developer restricted command."
+                "This is a Progenitor restricted command."
                 " You do not have permissions to run this.")
 
     return is_dev_plus_func
@@ -137,7 +137,7 @@ def sudo_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Who dis non-admin telling me what to do? You want a punch?")
+                "You don't tell me what to do Non-admin-chan.")
 
     return is_sudo_plus_func
 
@@ -199,7 +199,7 @@ def user_admin(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Who dis non-admin telling me what to do? You want a punch?")
+                "You don't tell me what to do Non-admin-chan.")
 
     return is_admin
 
@@ -252,9 +252,9 @@ def bot_admin(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            not_admin = "I'm not admin! - REEEEEE"
+            not_admin = "I'm not an anministrator."
         else:
-            not_admin = f"I'm not admin in <b>{update_chat_title}</b>! - REEEEEE"
+            not_admin = f"I'm not an administrator in <b>{update_chat_title}</b>! - BAKA!"
 
         if is_bot_admin(chat, bot.id):
             return func(update, context, *args, **kwargs)
@@ -373,7 +373,7 @@ def user_can_ban(func):
         if not (member.can_restrict_members or member.status == "creator"
                ) and not user in DRAGONS and user not in [777000, 1087968824]:
             update.effective_message.reply_text(
-                "Sorry son, but you're not worthy to wield the banhammer.")
+                "Not everyone is capable of wielding the ENMA!")
             return ""
         return func(update, context, *args, **kwargs)
 
