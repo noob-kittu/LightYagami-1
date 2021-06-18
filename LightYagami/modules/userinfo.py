@@ -224,22 +224,22 @@ def info(update: Update, context: CallbackContext):
         return
 
     rep = message.reply_text(
-        "Lemme Find His/Her Info To Write Its Name On The <b>Death Note</b>", parse_mode=ParseMode.HTML)
+        "Lemme see what he/she is  about.", parse_mode=ParseMode.HTML)
 
-    text = (f"   ✞「<b> The User's Info </b> 」✞      \n"
+    text = (f"The User's Info \n"
             f"ID: <code>{user.id}</code>\n"
-            f"✞ First Name ✞: {html.escape(user.first_name)}")
+            f"First Name: {html.escape(user.first_name)}")
 
     if user.last_name:
-        text += f"\n ☆✞Last Name✞☆  : {html.escape(user.last_name)}"
+        text += f"\n Last Name  : {html.escape(user.last_name)}"
 
     if user.username:
-        text += f"\n✞☆Username✞☆  : @{html.escape(user.username)}"
+        text += f"\n Username  : @{html.escape(user.username)}"
 
-    text += f"\n✞☆Permalink✞☆  : {mention_html(user.id, 'link')}"
+    text += f"\n Permalink  : {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n✞☆Presence✞☆  : <code>{}</code>"
+        _stext = "\n Presence  : <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -271,26 +271,26 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n✞☆The Disaster level of this person is <b>'KIRA'</b>✞☆."
+        text += "\n\nThe Disaster level of this person is <b>'Owner'</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThe Disaster Level Of This Person Is <b>Ryuk</b>."
+        text += "\n\nThe Disaster Level Of This Person Is <b>Progenitor</b>."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is <b>Lawliet L</b>."
+        text += "\n\nThe Disaster level of this person is <b>Conjurer</b>."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is <b>Misa</b>."
+        text += "\n\nThe Disaster level of this person is <b>Manipulator</b>."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is <b>Near</b>."
+        text += "\n\nThe Disaster level of this person is <b>Enhancer</b>."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is <b>Mello</b>."
+        text += "\n\nThe Disaster level of this person is <b>Transmuter</b>."
         disaster_level_present = True
     
     if disaster_level_present:
-        text += ' [<a href="https://t.me/seedofbots/6">?</a>]'.format(
+        text += ' [<a href="https://t.me/liebert_support/6">?</a>]'.format(
             bot.username)
 
     try:
