@@ -221,7 +221,7 @@ def start(update: Update, context: CallbackContext):
                             url="t.me/{}?start=help".format(context.bot.username))
                     ]]))
     else:
-        update.effective_message.(
+        update.effective_message(
           caption= "<b>Watch as the world turned and I did come back.\n Been awake since:</b><code>{}</code><b></b>".format(
                 uptime
             ),
