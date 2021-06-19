@@ -4,6 +4,7 @@ import sys
 import time
 import spamwatch
 import telegram.ext as tg
+import mongodb
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 from redis import StrictRedis
