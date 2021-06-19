@@ -54,6 +54,7 @@ nekos.py
 tgcrypto
 hachoir
 configparser
+odmantic
 bing_image_downloader
 parsel
 urllib3
