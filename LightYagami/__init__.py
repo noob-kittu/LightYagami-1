@@ -17,6 +17,11 @@ from Python_ARQ import ARQ
 import aiohttp
 from aiohttp import ClientSession
 from telethon import TelegramClient
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://mongo_test:mongo_test@123@ds129821.mlab.com:29821/connect_to_pymon")
+
+db = client["dbname"] 
 
 StartTime = time.time()
 
