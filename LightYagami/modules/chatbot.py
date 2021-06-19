@@ -14,11 +14,11 @@ import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from SaitamaRobot import BOT_ID
-from SaitamaRobot.modules.mongo.chatbot_mongo import add_chat, get_session, remove_chat
-from SaitamaRobot import arq
-from SaitamaRobot.utils.pluginhelp import admins_only, edit_or_reply
-from SaitamaRobot import pbot as eren
+from LightYagami import BOT_ID
+from LightYagami.modules.mongo.chatbot_mongo import add_chat, get_session, remove_chat
+from LightYagami import arq
+from LightYagami.utils.pluginhelp import admins_only, edit_or_reply
+from LightYagami import pbot as johan
 
 translator = google_translator()
 
@@ -46,7 +46,7 @@ async def fetch(url):
         print("AI response Timeout")
         return
 
-eren_chats = []
+johan_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 """
@@ -87,7 +87,7 @@ async def hmm(client, message):
 )
 @admins_only
 async def chatbot_status(_, message):
-    global eren_chats
+    global johan_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -164,7 +164,7 @@ async def chatbot_function(client, message):
 
         pro = response
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
+            await johan.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -224,7 +224,7 @@ async def chatbot_function(client, message):
             except:
                 return
         try:
-            await eren.send_chat_action(message.chat.id, "typing")
+            await johan.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -290,7 +290,7 @@ async def sasuke(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
+        await johan.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
@@ -363,7 +363,7 @@ async def sasuke(client, message):
         except Exception:
             return
     try:
-        await eren.send_chat_action(message.chat.id, "typing")
+        await johan.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
