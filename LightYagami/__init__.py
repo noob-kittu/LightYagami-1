@@ -18,8 +18,6 @@ import aiohttp
 from aiohttp import ClientSession
 from telethon import TelegramClient
 
-pip install dnspython==2.0.0
-
 StartTime = time.time()
 
 # enable logging
