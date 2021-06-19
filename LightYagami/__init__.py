@@ -69,7 +69,7 @@ if ENV:
         raise Exception("Your tiger users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", False))
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", mongodb+srv://YashMorya:<password>@cluster0.9fdcs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
      
