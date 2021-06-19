@@ -8,6 +8,7 @@ from pyrogram import Client, errors
 from aiogram import Bot, Dispatcher, types
 from aiogram.bot.api import TELEGRAM_PRODUCTION, TelegramAPIServer
 from telethon import TelegramClient
+from motor import motor_asyncio
 from odmantic import AIOEngine
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
@@ -15,8 +16,6 @@ from redis import StrictRedis
 from Python_ARQ import ARQ
 import aiohttp
 from aiohttp import ClientSession
-
-
 from telethon import TelegramClient
 
 StartTime = time.time()
@@ -216,6 +215,19 @@ oko = TelegramClient("LightYagami", API_ID, API_HASH)
 telethn = TelegramClient("saitama", API_ID, API_HASH)
 pgram = Client("lightPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
+pbot = Client("LightPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+mongodb = MongoClient(MONGO_URI, MONGO_PORT)[MONGO_DB]
+motor = motor_asyncio.AsyncIOMotorClient(MONGO_URI)
+db = motor[MONGO_DB]
+engine = AIOEngine(motor, MONGO_DB)
+print("[INFO]: INITIALZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+server = TELEGRAM_PRODUCTION
+print("[JOHAN]: INSTALLING AIOGRAM")
+bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML, server=server)
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
