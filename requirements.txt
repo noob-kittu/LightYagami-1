@@ -58,7 +58,7 @@ odmantic
 bing_image_downloader
 parsel
 urllib3
-pymongo
+pymongo[tls,srv]
 heroku3
 telegraph
 youtube_search
