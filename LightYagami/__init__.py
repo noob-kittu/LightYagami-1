@@ -4,8 +4,15 @@ import sys
 import time
 import spamwatch
 import telegram.ext as tg
+from pymongo import MongoClient
+from pymongo.errors import ServerSelectionTimeoutError
 from redis import StrictRedis
 from pyrogram import Client, errors
+from aiogram import Bot, Dispatcher, types
+from aiogram.bot.api import TELEGRAM_PRODUCTION, TelegramAPIServer
+import aiohttp
+from aiohttp import ClientSession
+
 
 from telethon import TelegramClient
 
@@ -62,7 +69,7 @@ if ENV:
         raise Exception("Your tiger users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", False))
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", mongodb+srv://YashMorya:<password>@cluster0.9fdcs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority)
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
      
