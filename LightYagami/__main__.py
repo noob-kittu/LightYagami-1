@@ -222,7 +222,7 @@ def start(update: Update, context: CallbackContext):
                     ]]))
     else:
         update.effective_message.(
-               , caption= "<b>Watch as the world turned and I did come back.\n Been awake since:</b><code>{}</code><b></b>".format(
+          caption= "<b>Watch as the world turned and I did come back.\n Been awake since:</b><code>{}</code><b></b>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
