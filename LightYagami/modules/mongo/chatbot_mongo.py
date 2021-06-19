@@ -1,4 +1,4 @@
-from LightYagami import mongodb as db_x
+from LightYagami import pymongo as db_x
 
 lydia = db_x["CHATBOT"]
 
