@@ -18,6 +18,8 @@ import aiohttp
 from aiohttp import ClientSession
 from telethon import TelegramClient
 
+pip install pymongo[srv]
+
 StartTime = time.time()
 
 # enable logging
