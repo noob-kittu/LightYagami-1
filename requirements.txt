@@ -6,6 +6,7 @@ CurrencyConverter
 emoji
 feedparser
 future
+hachoir
 geopy
 git+https://github.com/starry69/python-markdown2.git
 #googletrans
