@@ -18,6 +18,11 @@ import aiohttp
 from aiohttp import ClientSession
 from telethon import TelegramClient
 
+user = urllib.parse.quote_plus(os.getenv("USER"))
+passwd = urllib.parse.quote_plus(os.getenv("PASS"))
+
+connect(os.getenv("MONGO_DATABASE"), host= "mongodb+srv://asdgsdfg:krsuno77@@cluster0.nj62v.mongodb.net/cluster0?retryWrites=true&w=majority" % (user, passwd, os.getenv("MONGO_DATABASE")))
+
 StartTime = time.time()
 
 # enable logging
