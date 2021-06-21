@@ -33,6 +33,7 @@ ujson
 wikipedia
 zalgo-text
 fontTools
+urllib
 pyrogram
 nekos.py
 telegraph
