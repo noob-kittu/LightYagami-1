@@ -71,3 +71,4 @@ opencv-python-headless
 aiogram
 aiofiles
 aiocron
+heroku3
