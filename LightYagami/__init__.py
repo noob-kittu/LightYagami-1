@@ -110,6 +110,9 @@ if ENV:
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "lightYagami")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    ARQ_API_URL =  "https://thearq.tech"
+    ARQ_API_KEY = ARQ_API
+    ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     
     try:
         WHITELIST_CHATS = set(int(x) for x in os.environ.get('WHITELIST_CHATS', "").split())
