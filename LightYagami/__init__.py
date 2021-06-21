@@ -111,6 +111,7 @@ if ENV:
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "lightYagami")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     ARQ_API_URL =  "https://thearq.tech"
+    ARQ_API_KEY = ARQ_API
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     
     try:
@@ -186,6 +187,7 @@ else:
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
+    ARQ_API = Config.ARQ_API
     BOT_ID = Config.BOT_ID
 
     try:
