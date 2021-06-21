@@ -187,6 +187,7 @@ else:
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
+    ARQ_API = Config.ARQ_API
     BOT_ID = Config.BOT_ID
 
     try:
