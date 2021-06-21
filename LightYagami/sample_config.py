@@ -60,6 +60,7 @@ class Config(object):
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    ARQ_API_KEY=ARQ_API
 
 
 class Production(Config):
