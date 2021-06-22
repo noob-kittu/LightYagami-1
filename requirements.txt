@@ -72,3 +72,4 @@ aiogram
 aiofiles
 aiocron
 heroku3
+pymongo
